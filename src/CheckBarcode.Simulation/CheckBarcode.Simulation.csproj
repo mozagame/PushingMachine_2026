@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Device simulators (Modbus TCP PLC, code reader) used by tests, the demo mode and FAT. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>CheckBarcode.Simulator</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckBarcode.Application\CheckBarcode.Application.csproj" />
+  </ItemGroup>
+</Project>

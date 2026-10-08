@@ -1,0 +1,298 @@
+[
+  {
+    "code": "USER_CREATE",
+    "permission": "User.Manage",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Tạo tài khoản {objectId}",
+      "en": "Create user {objectId}"
+    }
+  },
+  {
+    "code": "USER_UPDATE",
+    "permission": "User.Manage",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Sửa tài khoản {objectId}: {field} từ {old} thành {new}",
+      "en": "Edit user {objectId}: {field} from {old} to {new}"
+    }
+  },
+  {
+    "code": "USER_RESET_PASSWORD",
+    "permission": "User.Manage",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Cấp lại mật khẩu mặc định cho {objectId}",
+      "en": "Reset password of {objectId} to default"
+    }
+  },
+  {
+    "code": "USER_LOCK",
+    "permission": "User.Manage",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Khóa tài khoản {objectId}",
+      "en": "Lock user {objectId}"
+    }
+  },
+  {
+    "code": "USER_UNLOCK",
+    "permission": "User.Manage",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Mở khóa tài khoản {objectId} (cấp lại mật khẩu mặc định)",
+      "en": "Unlock user {objectId} (password reset to default)"
+    }
+  },
+  {
+    "code": "USER_DEACTIVATE",
+    "permission": "User.Manage",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Vô hiệu hóa tài khoản {objectId}",
+      "en": "Deactivate user {objectId}"
+    }
+  },
+  {
+    "code": "USER_REACTIVATE",
+    "permission": "User.Manage",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Kích hoạt lại tài khoản {objectId}",
+      "en": "Reactivate user {objectId}"
+    }
+  },
+  {
+    "code": "ROLE_PERMISSIONS_CHANGE",
+    "permission": "User.Manage",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Đổi quyền của vai trò {objectId}: {field} từ {old} thành {new}",
+      "en": "Change permission of role {objectId}: {field} from {old} to {new}"
+    }
+  },
+  {
+    "code": "SECURITY_POLICY_CHANGE",
+    "permission": "Security.Settings",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Đổi chính sách bảo mật: {field} từ {old} thành {new}",
+      "en": "Change security policy: {field} from {old} to {new}"
+    }
+  },
+  {
+    "code": "RECIPE_CREATE",
+    "permission": "Recipe.Manage",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Tạo recipe {name}: {field} = {new}",
+      "en": "Create recipe {name}: {field} = {new}"
+    }
+  },
+  {
+    "code": "RECIPE_EDIT",
+    "permission": "Recipe.Manage",
+    "requireReason": true,
+    "requireSignature": true,
+    "text": {
+      "vi": "Sửa recipe {name}: {field} từ {old} thành {new}",
+      "en": "Edit recipe {name}: {field} from {old} to {new}"
+    },
+    "signatureMeaning": {
+      "vi": "Phê duyệt sửa recipe",
+      "en": "Approve recipe change"
+    }
+  },
+  {
+    "code": "RECIPE_DELETE",
+    "permission": "Recipe.Manage",
+    "requireReason": true,
+    "requireSignature": true,
+    "text": {
+      "vi": "Xóa recipe {name}",
+      "en": "Delete recipe {name}"
+    },
+    "signatureMeaning": {
+      "vi": "Phê duyệt xóa recipe",
+      "en": "Approve recipe deletion"
+    }
+  },
+  {
+    "code": "BATCH_CREATE",
+    "permission": "Batch.Run",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Tạo lô {batchNo}: {field} = {new}",
+      "en": "Create batch {batchNo}: {field} = {new}"
+    }
+  },
+  {
+    "code": "BATCH_START",
+    "permission": "Batch.Run",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Bắt đầu lô {batchNo}",
+      "en": "Start batch {batchNo}"
+    }
+  },
+  {
+    "code": "BATCH_PAUSE",
+    "permission": "Batch.Run",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Tạm dừng lô {batchNo}",
+      "en": "Pause batch {batchNo}"
+    }
+  },
+  {
+    "code": "BATCH_RESUME",
+    "permission": "Batch.Run",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Tiếp tục lô {batchNo}",
+      "en": "Resume batch {batchNo}"
+    }
+  },
+  {
+    "code": "BATCH_END",
+    "permission": "Batch.End",
+    "requireReason": false,
+    "requireSignature": true,
+    "text": {
+      "vi": "Kết thúc lô {batchNo} (thành phẩm: {finished})",
+      "en": "End batch {batchNo} (finished goods: {finished})"
+    },
+    "signatureMeaning": {
+      "vi": "Xác nhận kết thúc lô",
+      "en": "Confirm end of batch"
+    }
+  },
+  {
+    "code": "BATCH_RESET_COUNTERS",
+    "permission": "Batch.ResetCounters",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Đặt lại bộ đếm {objectId}: {field} từ {old} thành {new}",
+      "en": "Reset counter {objectId}: {field} from {old} to {new}"
+    }
+  },
+  {
+    "code": "ALARM_ACK",
+    "permission": "Alarm.Ack",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Xác nhận {count} alarm: {alarms}",
+      "en": "Acknowledge {count} alarm(s): {alarms}"
+    }
+  },
+  {
+    "code": "MACHINE_CAM_EDIT",
+    "permission": "Machine.CamEdit",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Đổi {field} từ {old} thành {new}",
+      "en": "Change {field} from {old} to {new}"
+    }
+  },
+  {
+    "code": "CAMERA_CONNECT",
+    "permission": "Camera.Connect",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Kết nối camera {objectId}",
+      "en": "Connect camera {objectId}"
+    }
+  },
+  {
+    "code": "CAMERA_DISCONNECT",
+    "permission": "Camera.Connect",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Ngắt kết nối camera {objectId}",
+      "en": "Disconnect camera {objectId}"
+    }
+  },
+  {
+    "code": "CAMERA_SETTINGS",
+    "permission": "Camera.Settings",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Đổi cài đặt camera {objectId}: {field} từ {old} thành {new}",
+      "en": "Change camera {objectId} setting {field} from {old} to {new}"
+    }
+  },
+  {
+    "code": "SETTINGS_CHANGE",
+    "permission": "Machine.Settings",
+    "requireReason": true,
+    "requireSignature": false,
+    "text": {
+      "vi": "Đổi cài đặt {field} từ {old} thành {new}",
+      "en": "Change setting {field} from {old} to {new}"
+    }
+  },
+  {
+    "code": "REPORT_EXPORT",
+    "permission": "Report.Export",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Xuất báo cáo {objectId} ra {destination}: {file}",
+      "en": "Export report {objectId} to {destination}: {file}"
+    }
+  },
+  {
+    "code": "REPORT_PRINT",
+    "permission": "Report.View",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "In báo cáo {title}",
+      "en": "Print report {title}"
+    }
+  },
+  {
+    "code": "AUDIT_REVIEW",
+    "permission": "Audit.Review",
+    "requireReason": false,
+    "requireSignature": true,
+    "text": {
+      "vi": "Xem xét audit trail {from} → {to}: {records} bản ghi, toàn vẹn {integrity}",
+      "en": "Audit trail review {from} → {to}: {records} records, integrity {integrity}"
+    },
+    "signatureMeaning": {
+      "vi": "Đã xem xét audit trail",
+      "en": "Audit trail reviewed"
+    }
+  },
+  {
+    "code": "APP_EXIT",
+    "permission": "System.Exit",
+    "requireReason": false,
+    "requireSignature": false,
+    "text": {
+      "vi": "Thoát phần mềm ra Windows",
+      "en": "Exit application to Windows"
+    }
+  }
+]

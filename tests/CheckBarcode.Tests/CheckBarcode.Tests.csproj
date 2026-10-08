@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Self-contained test runner (no NuGet). Run with: dotnet run, project tests/CheckBarcode.Tests, optional name filter -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>CheckBarcode.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CheckBarcode.Infrastructure\CheckBarcode.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\CheckBarcode.Simulation\CheckBarcode.Simulation.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\config\**\*" LinkBase="config" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Windows: SQLite native library (Linux CI uses the system libsqlite3). -->
+    <None Include="..\..\lib\native\SQLite.Interop.dll" Link="SQLite.Interop.dll" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

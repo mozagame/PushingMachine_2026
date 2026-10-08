@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Cognex DataMan adapter. Windows only: the DataMan SDK uses System.Drawing. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>CheckBarcode.Devices.Cognex</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <PlatformTarget>x64</PlatformTarget>
+    <NoWarn>$(NoWarn);MSB3270;CA1416</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckBarcode.Application\CheckBarcode.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cognex.DataMan.SDK.PC"><HintPath>..\..\lib\cognex\Cognex.DataMan.SDK.PC.dll</HintPath></Reference>
+    <Reference Include="Cognex.DataMan.SDK.Utils.PC"><HintPath>..\..\lib\cognex\Cognex.DataMan.SDK.Utils.PC.dll</HintPath></Reference>
+    <Reference Include="Cognex.DataMan.SDK.Discovery.PC"><HintPath>..\..\lib\cognex\Cognex.DataMan.SDK.Discovery.PC.dll</HintPath></Reference>
+    <Reference Include="Cognex.DataMan.CogNamer.PC"><HintPath>..\..\lib\cognex\Cognex.DataMan.CogNamer.PC.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

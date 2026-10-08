@@ -1,0 +1,1136 @@
+[
+  {
+    "id": "PLC_HEARTBEAT",
+    "category": "Internal",
+    "direction": "Read",
+    "address": 0,
+    "type": "UInt16",
+    "text": {
+      "vi": "Nhịp PLC",
+      "en": "PLC heartbeat"
+    }
+  },
+  {
+    "id": "MACHINE_RUNNING",
+    "category": "State",
+    "direction": "Read",
+    "address": 1,
+    "type": "Bool",
+    "audit": true,
+    "debounceMs": 300,
+    "text": {
+      "vi": "Trạng thái máy chạy",
+      "en": "Machine running"
+    }
+  },
+  {
+    "id": "ESTOP_ACTIVE",
+    "category": "Alarm",
+    "direction": "Read",
+    "address": 2,
+    "type": "Bool",
+    "severity": "Critical",
+    "activeWhen": "== 1",
+    "text": {
+      "vi": "Dừng khẩn cấp",
+      "en": "Emergency stop"
+    }
+  },
+  {
+    "id": "ALM_INVERTER",
+    "category": "Alarm",
+    "direction": "Read",
+    "address": 3,
+    "bit": 0,
+    "type": "Bool",
+    "severity": "High",
+    "activeWhen": "== 1",
+    "debounceMs": 200,
+    "text": {
+      "vi": "Lỗi biến tần",
+      "en": "Inverter fault"
+    }
+  },
+  {
+    "id": "ALM_TURNTABLE",
+    "category": "Alarm",
+    "direction": "Read",
+    "address": 3,
+    "bit": 1,
+    "type": "Bool",
+    "severity": "High",
+    "activeWhen": "== 1",
+    "debounceMs": 200,
+    "text": {
+      "vi": "Lỗi lệch mâm xoay",
+      "en": "Turntable misalignment"
+    }
+  },
+  {
+    "id": "ALM_AIR_PRESSURE",
+    "category": "Alarm",
+    "direction": "Read",
+    "address": 3,
+    "bit": 2,
+    "type": "Bool",
+    "severity": "High",
+    "activeWhen": "== 1",
+    "debounceMs": 200,
+    "text": {
+      "vi": "Lỗi áp suất",
+      "en": "Air pressure fault"
+    }
+  },
+  {
+    "id": "ALM_MAINTENANCE",
+    "category": "Alarm",
+    "direction": "Read",
+    "address": 3,
+    "bit": 3,
+    "type": "Bool",
+    "severity": "Low",
+    "activeWhen": "== 1",
+    "debounceMs": 200,
+    "text": {
+      "vi": "Cảnh báo bảo trì máy",
+      "en": "Maintenance due"
+    }
+  },
+  {
+    "id": "ALM_INDATE_TEMP_HIGH",
+    "category": "Alarm",
+    "direction": "Read",
+    "address": 3,
+    "bit": 4,
+    "type": "Bool",
+    "severity": "Medium",
+    "activeWhen": "== 1",
+    "debounceMs": 200,
+    "text": {
+      "vi": "Nhiệt độ In date cao",
+      "en": "In-date temperature high"
+    }
+  },
+  {
+    "id": "ALM_INDATE_TEMP_LOW",
+    "category": "Alarm",
+    "direction": "Read",
+    "address": 3,
+    "bit": 5,
+    "type": "Bool",
+    "severity": "Medium",
+    "activeWhen": "== 1",
+    "debounceMs": 200,
+    "text": {
+      "vi": "Nhiệt độ In date thấp",
+      "en": "In-date temperature low"
+    }
+  },
+  {
+    "id": "LEAFLET_FEED_ENABLED",
+    "category": "State",
+    "direction": "Read",
+    "address": 4,
+    "bit": 0,
+    "type": "Bool",
+    "audit": true,
+    "text": {
+      "vi": "Cho phép cấp toa",
+      "en": "Leaflet feed enabled"
+    }
+  },
+  {
+    "id": "BOX_SUCTION_ENABLED",
+    "category": "State",
+    "direction": "Read",
+    "address": 4,
+    "bit": 1,
+    "type": "Bool",
+    "audit": true,
+    "text": {
+      "vi": "Cho phép hút hộp",
+      "en": "Box suction enabled"
+    }
+  },
+  {
+    "id": "INDATE_ON",
+    "category": "State",
+    "direction": "Read",
+    "address": 4,
+    "bit": 2,
+    "type": "Bool",
+    "audit": true,
+    "text": {
+      "vi": "Bật In date",
+      "en": "In-date printer on"
+    }
+  },
+  {
+    "id": "SPEED_ACTUAL",
+    "category": "Process",
+    "direction": "Read",
+    "address": 5,
+    "type": "UInt16",
+    "unit": "hộp/phút",
+    "deadband": 0.5,
+    "text": {
+      "vi": "Tốc độ thực tế",
+      "en": "Actual speed"
+    }
+  },
+  {
+    "id": "TEMP_ACTUAL",
+    "category": "Process",
+    "direction": "Read",
+    "address": 6,
+    "type": "Int16",
+    "unit": "°C",
+    "deadband": 0.5,
+    "text": {
+      "vi": "Nhiệt độ thực tế",
+      "en": "Actual temperature"
+    }
+  },
+  {
+    "id": "CAM_HUT_HOP_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 10,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Hút hộp ON",
+      "en": "Cam Box suction ON"
+    }
+  },
+  {
+    "id": "CAM_HUT_HOP_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 11,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Hút hộp OFF",
+      "en": "Cam Box suction OFF"
+    }
+  },
+  {
+    "id": "CAM_CAP_HOP_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 12,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Cấp hộp ON",
+      "en": "Cam Box feed ON"
+    }
+  },
+  {
+    "id": "CAM_CAP_HOP_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 13,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Cấp hộp OFF",
+      "en": "Cam Box feed OFF"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_DUOI_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 14,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Gấp tai dưới ON",
+      "en": "Cam Lower flap fold ON"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_DUOI_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 15,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Gấp tai dưới OFF",
+      "en": "Cam Lower flap fold OFF"
+    }
+  },
+  {
+    "id": "CAM_IN_DATE_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 16,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam In date ON",
+      "en": "Cam Date printing ON"
+    }
+  },
+  {
+    "id": "CAM_IN_DATE_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 17,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam In date OFF",
+      "en": "Cam Date printing OFF"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_TREN_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 18,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Gấp tai trên ON",
+      "en": "Cam Upper flap fold ON"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_TREN_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 19,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Gấp tai trên OFF",
+      "en": "Cam Upper flap fold OFF"
+    }
+  },
+  {
+    "id": "CAM_CHAN_NAP_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 20,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Chặn nắp ON",
+      "en": "Cam Lid stop ON"
+    }
+  },
+  {
+    "id": "CAM_CHAN_NAP_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 21,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Chặn nắp OFF",
+      "en": "Cam Lid stop OFF"
+    }
+  },
+  {
+    "id": "CAM_GAP_NAP_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 22,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Gấp nắp ON",
+      "en": "Cam Lid fold ON"
+    }
+  },
+  {
+    "id": "CAM_GAP_NAP_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 23,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Gấp nắp OFF",
+      "en": "Cam Lid fold OFF"
+    }
+  },
+  {
+    "id": "CAM_DONG_NAP_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 24,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Đóng nắp ON",
+      "en": "Cam Lid close ON"
+    }
+  },
+  {
+    "id": "CAM_DONG_NAP_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 25,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Đóng nắp OFF",
+      "en": "Cam Lid close OFF"
+    }
+  },
+  {
+    "id": "CAM_THANH_PHAM_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 26,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Thành phẩm ON",
+      "en": "Cam Finished product ON"
+    }
+  },
+  {
+    "id": "CAM_THANH_PHAM_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 27,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Thành phẩm OFF",
+      "en": "Cam Finished product OFF"
+    }
+  },
+  {
+    "id": "CAM_HUT_TOA_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 28,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Hút toa ON",
+      "en": "Cam Leaflet suction ON"
+    }
+  },
+  {
+    "id": "CAM_HUT_TOA_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 29,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Hút toa OFF",
+      "en": "Cam Leaflet suction OFF"
+    }
+  },
+  {
+    "id": "CAM_KEP_TOA_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 30,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Kẹp toa ON",
+      "en": "Cam Leaflet clamp ON"
+    }
+  },
+  {
+    "id": "CAM_KEP_TOA_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 31,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Kẹp toa OFF",
+      "en": "Cam Leaflet clamp OFF"
+    }
+  },
+  {
+    "id": "CAM_KEO_TOA_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 32,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Kéo toa ON",
+      "en": "Cam Leaflet pull ON"
+    }
+  },
+  {
+    "id": "CAM_KEO_TOA_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 33,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Kéo toa OFF",
+      "en": "Cam Leaflet pull OFF"
+    }
+  },
+  {
+    "id": "CAM_LAC_HUT_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 34,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Lắc hút ON",
+      "en": "Cam Suction swing ON"
+    }
+  },
+  {
+    "id": "CAM_LAC_HUT_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 35,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Lắc hút OFF",
+      "en": "Cam Suction swing OFF"
+    }
+  },
+  {
+    "id": "CAM_CHOT_TOA_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 36,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Chọt toa ON",
+      "en": "Cam Leaflet push ON"
+    }
+  },
+  {
+    "id": "CAM_CHOT_TOA_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 37,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Chọt toa OFF",
+      "en": "Cam Leaflet push OFF"
+    }
+  },
+  {
+    "id": "CAM_CAP_TOA_HD_ON_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 38,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Cấp toa hoạt động ON",
+      "en": "Cam Leaflet feed active ON"
+    }
+  },
+  {
+    "id": "CAM_CAP_TOA_HD_OFF_ACT",
+    "category": "Parameter",
+    "direction": "Read",
+    "address": 39,
+    "type": "UInt16",
+    "unit": "°",
+    "group": "CamRead",
+    "text": {
+      "vi": "Cam Cấp toa hoạt động OFF",
+      "en": "Cam Leaflet feed active OFF"
+    }
+  },
+  {
+    "id": "PC_HEARTBEAT",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 100,
+    "type": "UInt16",
+    "text": {
+      "vi": "Nhịp PC",
+      "en": "PC heartbeat"
+    }
+  },
+  {
+    "id": "LOGIN_LEVEL",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 101,
+    "type": "UInt16",
+    "text": {
+      "vi": "Cấp đăng nhập",
+      "en": "Login level"
+    }
+  },
+  {
+    "id": "BOX_CAM_SCANNING",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 102,
+    "type": "UInt16",
+    "text": {
+      "vi": "Camera Hộp đang quét",
+      "en": "Box camera scanning"
+    }
+  },
+  {
+    "id": "LEAFLET_CAM_SCANNING",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 103,
+    "type": "UInt16",
+    "text": {
+      "vi": "Camera Toa đang quét",
+      "en": "Leaflet camera scanning"
+    }
+  },
+  {
+    "id": "SPEED_SETPOINT",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 104,
+    "type": "UInt16",
+    "unit": "hộp/phút",
+    "min": 0,
+    "max": 300,
+    "text": {
+      "vi": "Tốc độ cài đặt",
+      "en": "Speed setpoint"
+    }
+  },
+  {
+    "id": "TEMP_SETPOINT",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 105,
+    "type": "Int16",
+    "unit": "°C",
+    "min": 0,
+    "max": 250,
+    "text": {
+      "vi": "Nhiệt độ cài đặt",
+      "en": "Temperature setpoint"
+    }
+  },
+  {
+    "id": "CAM_HUT_HOP_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 110,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_HUT_HOP_ON_ACT",
+    "text": {
+      "vi": "Cam Hút hộp ON",
+      "en": "Cam Box suction ON"
+    }
+  },
+  {
+    "id": "CAM_HUT_HOP_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 111,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_HUT_HOP_OFF_ACT",
+    "text": {
+      "vi": "Cam Hút hộp OFF",
+      "en": "Cam Box suction OFF"
+    }
+  },
+  {
+    "id": "CAM_CAP_HOP_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 112,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CAP_HOP_ON_ACT",
+    "text": {
+      "vi": "Cam Cấp hộp ON",
+      "en": "Cam Box feed ON"
+    }
+  },
+  {
+    "id": "CAM_CAP_HOP_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 113,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CAP_HOP_OFF_ACT",
+    "text": {
+      "vi": "Cam Cấp hộp OFF",
+      "en": "Cam Box feed OFF"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_DUOI_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 114,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_GAP_TAI_DUOI_ON_ACT",
+    "text": {
+      "vi": "Cam Gấp tai dưới ON",
+      "en": "Cam Lower flap fold ON"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_DUOI_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 115,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_GAP_TAI_DUOI_OFF_ACT",
+    "text": {
+      "vi": "Cam Gấp tai dưới OFF",
+      "en": "Cam Lower flap fold OFF"
+    }
+  },
+  {
+    "id": "CAM_IN_DATE_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 116,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_IN_DATE_ON_ACT",
+    "text": {
+      "vi": "Cam In date ON",
+      "en": "Cam Date printing ON"
+    }
+  },
+  {
+    "id": "CAM_IN_DATE_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 117,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_IN_DATE_OFF_ACT",
+    "text": {
+      "vi": "Cam In date OFF",
+      "en": "Cam Date printing OFF"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_TREN_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 118,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_GAP_TAI_TREN_ON_ACT",
+    "text": {
+      "vi": "Cam Gấp tai trên ON",
+      "en": "Cam Upper flap fold ON"
+    }
+  },
+  {
+    "id": "CAM_GAP_TAI_TREN_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 119,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_GAP_TAI_TREN_OFF_ACT",
+    "text": {
+      "vi": "Cam Gấp tai trên OFF",
+      "en": "Cam Upper flap fold OFF"
+    }
+  },
+  {
+    "id": "CAM_CHAN_NAP_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 120,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CHAN_NAP_ON_ACT",
+    "text": {
+      "vi": "Cam Chặn nắp ON",
+      "en": "Cam Lid stop ON"
+    }
+  },
+  {
+    "id": "CAM_CHAN_NAP_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 121,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CHAN_NAP_OFF_ACT",
+    "text": {
+      "vi": "Cam Chặn nắp OFF",
+      "en": "Cam Lid stop OFF"
+    }
+  },
+  {
+    "id": "CAM_GAP_NAP_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 122,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_GAP_NAP_ON_ACT",
+    "text": {
+      "vi": "Cam Gấp nắp ON",
+      "en": "Cam Lid fold ON"
+    }
+  },
+  {
+    "id": "CAM_GAP_NAP_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 123,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_GAP_NAP_OFF_ACT",
+    "text": {
+      "vi": "Cam Gấp nắp OFF",
+      "en": "Cam Lid fold OFF"
+    }
+  },
+  {
+    "id": "CAM_DONG_NAP_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 124,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_DONG_NAP_ON_ACT",
+    "text": {
+      "vi": "Cam Đóng nắp ON",
+      "en": "Cam Lid close ON"
+    }
+  },
+  {
+    "id": "CAM_DONG_NAP_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 125,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_DONG_NAP_OFF_ACT",
+    "text": {
+      "vi": "Cam Đóng nắp OFF",
+      "en": "Cam Lid close OFF"
+    }
+  },
+  {
+    "id": "CAM_THANH_PHAM_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 126,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_THANH_PHAM_ON_ACT",
+    "text": {
+      "vi": "Cam Thành phẩm ON",
+      "en": "Cam Finished product ON"
+    }
+  },
+  {
+    "id": "CAM_THANH_PHAM_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 127,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_THANH_PHAM_OFF_ACT",
+    "text": {
+      "vi": "Cam Thành phẩm OFF",
+      "en": "Cam Finished product OFF"
+    }
+  },
+  {
+    "id": "CAM_HUT_TOA_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 128,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_HUT_TOA_ON_ACT",
+    "text": {
+      "vi": "Cam Hút toa ON",
+      "en": "Cam Leaflet suction ON"
+    }
+  },
+  {
+    "id": "CAM_HUT_TOA_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 129,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_HUT_TOA_OFF_ACT",
+    "text": {
+      "vi": "Cam Hút toa OFF",
+      "en": "Cam Leaflet suction OFF"
+    }
+  },
+  {
+    "id": "CAM_KEP_TOA_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 130,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_KEP_TOA_ON_ACT",
+    "text": {
+      "vi": "Cam Kẹp toa ON",
+      "en": "Cam Leaflet clamp ON"
+    }
+  },
+  {
+    "id": "CAM_KEP_TOA_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 131,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_KEP_TOA_OFF_ACT",
+    "text": {
+      "vi": "Cam Kẹp toa OFF",
+      "en": "Cam Leaflet clamp OFF"
+    }
+  },
+  {
+    "id": "CAM_KEO_TOA_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 132,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_KEO_TOA_ON_ACT",
+    "text": {
+      "vi": "Cam Kéo toa ON",
+      "en": "Cam Leaflet pull ON"
+    }
+  },
+  {
+    "id": "CAM_KEO_TOA_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 133,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_KEO_TOA_OFF_ACT",
+    "text": {
+      "vi": "Cam Kéo toa OFF",
+      "en": "Cam Leaflet pull OFF"
+    }
+  },
+  {
+    "id": "CAM_LAC_HUT_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 134,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_LAC_HUT_ON_ACT",
+    "text": {
+      "vi": "Cam Lắc hút ON",
+      "en": "Cam Suction swing ON"
+    }
+  },
+  {
+    "id": "CAM_LAC_HUT_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 135,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_LAC_HUT_OFF_ACT",
+    "text": {
+      "vi": "Cam Lắc hút OFF",
+      "en": "Cam Suction swing OFF"
+    }
+  },
+  {
+    "id": "CAM_CHOT_TOA_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 136,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CHOT_TOA_ON_ACT",
+    "text": {
+      "vi": "Cam Chọt toa ON",
+      "en": "Cam Leaflet push ON"
+    }
+  },
+  {
+    "id": "CAM_CHOT_TOA_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 137,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CHOT_TOA_OFF_ACT",
+    "text": {
+      "vi": "Cam Chọt toa OFF",
+      "en": "Cam Leaflet push OFF"
+    }
+  },
+  {
+    "id": "CAM_CAP_TOA_HD_ON_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 138,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CAP_TOA_HD_ON_ACT",
+    "text": {
+      "vi": "Cam Cấp toa hoạt động ON",
+      "en": "Cam Leaflet feed active ON"
+    }
+  },
+  {
+    "id": "CAM_CAP_TOA_HD_OFF_SP",
+    "category": "Internal",
+    "direction": "Write",
+    "address": 139,
+    "type": "UInt16",
+    "unit": "°",
+    "min": 0,
+    "max": 359,
+    "group": "Cam",
+    "readback": "CAM_CAP_TOA_HD_OFF_ACT",
+    "text": {
+      "vi": "Cam Cấp toa hoạt động OFF",
+      "en": "Cam Leaflet feed active OFF"
+    }
+  }
+]

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Compile-only verification of the WPF and Cognex projects on Linux CI (no Windows Desktop SDK there).
+    refs/WpfAll.dll is built from the reference sources of github.com/dotnet/wpf (see make-refs.sh);
+    refs/System.Drawing.Common.dll is a stub with the few types the Cognex SDK exposes.
+    The real build is CheckBarcode.Wpf.csproj on Windows.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>UiCheck</AssemblyName>
+    <NoWarn>$(NoWarn);CS0436;MSB3277;CA1416</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/CheckBarcode.Wpf/**/*.cs" Exclude="../../src/CheckBarcode.Wpf/obj/**;../../src/CheckBarcode.Wpf/bin/**" />
+    <Compile Include="../../src/CheckBarcode.Devices.Cognex/**/*.cs" Exclude="../../src/CheckBarcode.Devices.Cognex/obj/**;../../src/CheckBarcode.Devices.Cognex/bin/**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/CheckBarcode.Infrastructure/CheckBarcode.Infrastructure.csproj" />
+    <ProjectReference Include="../../src/CheckBarcode.Simulation/CheckBarcode.Simulation.csproj" />
+    <Reference Include="WpfAll"><HintPath>refs/WpfAll.dll</HintPath></Reference>
+    <Reference Include="System.Drawing.Common"><HintPath>refs/System.Drawing.Common.dll</HintPath></Reference>
+    <Reference Include="Cognex.DataMan.SDK.PC"><HintPath>../../lib/cognex/Cognex.DataMan.SDK.PC.dll</HintPath></Reference>
+    <Reference Include="Cognex.DataMan.SDK.Utils.PC"><HintPath>../../lib/cognex/Cognex.DataMan.SDK.Utils.PC.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>
